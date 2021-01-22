@@ -43,3 +43,4 @@ if __name__ == '__main__':
     print(houyi.my_power)
     houyi.fight()
     # houyi.rest(3)
+    # 演示命令行上传
