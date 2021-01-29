@@ -2,6 +2,7 @@
 # @Author  : feier
 # @File    : test_calc.py
 import pytest
+import yaml
 
 from python_code.calc import Calculator
 
@@ -32,6 +33,7 @@ class TestCalc:
         "a, b, expect",
         add_datas, ids=myid
     )
+    @pytest.mark.add
     def test_add(self, a, b, expect):
         # 实例化计算器类
         # calc = Calculator()
@@ -43,18 +45,31 @@ class TestCalc:
         # 得到相加结果之后写断言
         assert result == expect
 
+    @pytest.mark.add
     def test_add1(self):
         # calc = Calculator()
         result = self.calc.add(0.1,0.1)
         assert result == 0.2
-    
+
+    @pytest.mark.add
     def test_add2(self):
         # calc = Calculator()
         result = self.calc.add(-1,-1)
         assert result == -2
 
-    def test_add3(self):
-        result = self.add(0.1, 0.2)
-        assert round(result,2) == 0.3
+    # def test_add3(self):
+    #     result = self.add(0.1, 0.2)
+    #     assert round(result,2) == 0.3
 
+    @pytest.mark.div
+    def test_div(self):
+        print("test_div")
+
+    @pytest.mark.sub
+    def test_sub(self):
+        print("test_sub")
+
+    @pytest.mark.mul
+    def test_mul(self):
+        print("test_mul")
 

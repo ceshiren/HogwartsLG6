@@ -1,0 +1,6 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Fri Jan 29 22:36:31 CST 2021","Fri Jan 29 22:36:31 CST 2021","0","","test_calc_new","TestCalc","","","test_add[minus]",""
+"passed","Fri Jan 29 22:36:31 CST 2021","Fri Jan 29 22:36:31 CST 2021","0","","test_calc_new","TestCalc","","","test_add[bigint]",""
+"passed","Fri Jan 29 22:36:31 CST 2021","Fri Jan 29 22:36:31 CST 2021","0","","test_calc_new","TestCalc","","","test_add[float]",""
+"passed","Fri Jan 29 22:36:31 CST 2021","Fri Jan 29 22:36:31 CST 2021","0","","test_calc_new","TestCalc","","","test_add[int]",""
+"failed","Fri Jan 29 22:36:31 CST 2021","Fri Jan 29 22:36:31 CST 2021","0","","test_calc_new","TestCalc","","","test_add[failed]",""
