@@ -1,6 +1,7 @@
 # This sample code uses the Appium python client
 # pip install Appium-Python-Client
 # Then you can paste this into a file and simply run with Python
+from time import sleep
 
 from appium import webdriver
 from appium.webdriver.common.mobileby import MobileBy
@@ -38,6 +39,8 @@ class TestDemo:
         el5.click()
 
     def test_daka(self):
+        sleep(15)
+        self.driver.find_element_by_xpath('//*[@text="行情"]').click()
         self.driver.find_element_by_xpath("//*[@text='工作台']").click()
         # 滚动查找元素
         self.driver.find_element(MobileBy.ANDROID_UIAUTOMATOR,
@@ -48,6 +51,5 @@ class TestDemo:
         self.driver.find_element_by_xpath("//*[@text='外出打卡']").click()
         self.driver.find_element(MobileBy.XPATH,"//*[contains(@text,'次外出')]").click()
         # 获取元素的text属性
-
         # r = self.driver.find_element_by_id("com.tencent.wework:id/mn").text
         self.driver.find_element_by_xpath("//*[@text='外出打卡成功']")

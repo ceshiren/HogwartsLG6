@@ -1,0 +1,6 @@
+goto_work_page:
+  - locator: //*[@text='工作台']
+    action: find_click
+
+
+
