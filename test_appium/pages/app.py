@@ -1,5 +1,5 @@
 from appium import webdriver
-from robot.errors import Information
+# from robot.errors import Information
 
 from test_appium.pages.information_page import InformationPage
 

@@ -1,0 +1,19 @@
+edit_contact:
+  - by: xpath
+    locator: //*[contains(@text, '姓名')]/../android.widget.EditText
+    action: find_sendkeys
+    text: ${name}
+
+  - locator: //*[contains(@text, '手机')]/..//*[@text='必填']
+    by: xpath
+    action: find_sendkeys
+    text: ${phonenum}
+
+  - locator: //*[@text='保存']
+    by: xpath
+    action: find_click
+
+verify_ok:
+  - locator: //*[@text='添加成功']
+    by: xpath
+    action: find
