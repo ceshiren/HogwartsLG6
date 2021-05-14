@@ -2,6 +2,7 @@ import json
 from typing import List
 
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from flask_restful import Resource, Api
 from flask_sqlalchemy import SQLAlchemy
 
@@ -10,7 +11,8 @@ api = Api(app)
 app.config[
     'SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://lagou6:ceshiren.com@stuq.ceshiren.com:23306/lagou6?charset=utf8mb4'
 db = SQLAlchemy(app)
-
+# 开启不同源访问
+CORS(app)
 testcases = []
 
 
@@ -56,9 +58,11 @@ class TestCaseService(Resource):
         获取所有的接口测试用例或者单个的测试用例，返回json结构体
         :return:
         """
-
-        testcases = [str(item) for item in TestCase.query.all()]
-        return jsonify(testcases)
+        # 把返回的数据改成了 json 结构
+        # 前端，可以方便的解析 json 结构，方便前端进行展示
+        # 前端  -get：获取用例-> 后端
+        testcases = [item.as_dict() for item in TestCase.query.all()]
+        return testcases
 
     def post(self):
         """
@@ -110,7 +114,7 @@ class TestCaseService(Resource):
         :return:
         """
 
-
+# 指定 url 的作用范围
 api.add_resource(Main, '/main')
 api.add_resource(TestCaseService, '/testcase')
 
